@@ -22,7 +22,7 @@ class shutdown(
     $config_path_flg = $config_path
   }
   $config_template_flg = $config_template ? {
-    undef => { content => template("${module_name}/shutdown-${status}.erb") },
+    undef => { content => template("${module_name}/rhel-${::operatingsystemmajrelease}-${status}.erb") },
     default => { source => $config_template },
   }
   # add class config
